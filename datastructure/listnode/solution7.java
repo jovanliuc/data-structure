@@ -13,10 +13,10 @@ public class solution7 {
         head.next.next.next.next = new ListNode(5);
         head.next.next.next.next.next = new ListNode(6);
 
-        traverse(head);
+        reverse(head);
     }
 
-    ListNode traverse(ListNode head) {
+    ListNode reverse(ListNode head) {
         ListNode previous = null;
         ListNode current = head;
         ListNode next = head;
