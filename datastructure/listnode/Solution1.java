@@ -1,4 +1,4 @@
-package java.listnode;
+package java.datastructure.listnode;
 
 import org.junit.Test;
 

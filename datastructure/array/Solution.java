@@ -1,4 +1,4 @@
-package java.array;
+package java.datastructure.array;
 
 import org.junit.Test;
 

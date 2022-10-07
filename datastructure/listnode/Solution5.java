@@ -1,8 +1,8 @@
-package java.listnode;
+package java.datastructure.listnode;
 
 import org.junit.Test;
 
-public class Solution4 {
+public class Solution5 {
 
     @Test
     void test() {
@@ -13,14 +13,14 @@ public class Solution4 {
         head.next.next.next.next = new ListNode(5);
         head.next.next.next.next.next = new ListNode(6);
 
-        traverse(head);
+        reversedTraverse(head);
     }
 
-    void traverse(ListNode head) {
+    void reversedTraverse(ListNode head) {
         if (head == null) {
             return;
         }
+        reversedTraverse(head.next);
         System.out.print(head.val + " -> ");
-        traverse(head.next);
     }
 }

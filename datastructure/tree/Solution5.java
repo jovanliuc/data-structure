@@ -1,13 +1,11 @@
-package java.tree;
+package java.datastructure.tree;
 
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Solution4 {
-
-    List<Integer> result = new ArrayList<>();
+public class Solution5 {
 
     @Test
     void test() {
@@ -24,16 +22,14 @@ public class Solution4 {
     }
 
     private List<Integer> preorderTraverse(TreeNode root) {
-        traverse(root);
-        return result;
-    }
-
-    private void traverse(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
         if (root == null) {
-            return;
+            return result;
         }
+
         result.add(root.val);
-        traverse(root.left);
-        traverse(root.right);
+        result.addAll(preorderTraverse(root.left));
+        result.addAll(preorderTraverse(root.right));
+        return result;
     }
 }

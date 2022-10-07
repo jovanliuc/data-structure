@@ -1,8 +1,11 @@
-package java.tree;
+package java.datastructure.tree;
 
 import org.junit.Test;
 
-public class Solution1 {
+public class Solution2 {
+
+    int maxDepth = 0;
+    int depth = 0;
 
     @Test
     void test() {
@@ -21,13 +24,13 @@ public class Solution1 {
         if (root == null) {
             return;
         }
-        // the location of pre-order
-        // System.out.print(root.val + " -> ");
+
+        depth++;
+        if (root.left == null && root.right == null) {
+            maxDepth = depth > maxDepth ? depth : maxDepth;
+        }
         traverse(root.left);
-        // the location of in-order
-        // System.out.print(root.val + " -> ");
         traverse(root.right);
-        // the location of post-order
-        // System.out.print(root.val + " -> ");
+        depth--;
     }
 }

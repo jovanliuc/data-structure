@@ -1,4 +1,4 @@
-package java.tree;
+package java.datastructure.tree;
 
 public class TreeNode {
 
