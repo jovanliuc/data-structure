@@ -1,6 +1,6 @@
-package java.datastructure.tree;
+package datastructure.tree;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.LinkedList;
 import java.util.Queue;

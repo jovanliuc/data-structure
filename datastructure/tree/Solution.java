@@ -1,8 +1,11 @@
-package java.datastructure.tree;
+package datastructure.tree;
+
+import org.junit.jupiter.api.Test;
 
 public class Solution {
 
-    public static void main(String[] args) {
+    @Test
+    void test() {
         TreeNode root = new TreeNode(9);
         root.left = new TreeNode(6);
         root.right = new TreeNode(12);
@@ -27,7 +30,7 @@ public class Solution {
         postOrderTraversal(root);
     }
 
-    public static TreeNode get(TreeNode root, int key) {
+    public TreeNode get(TreeNode root, int key) {
         TreeNode current = root;
         while (current != null && current.val != key) {
             if (key > current.val) {
@@ -40,7 +43,7 @@ public class Solution {
         return current != null ? current : null;
     }
 
-    public static TreeNode insert(TreeNode root, int key) {
+    public TreeNode insert(TreeNode root, int key) {
         if (root == null) {
             root = new TreeNode(key);
             return root;
@@ -69,7 +72,7 @@ public class Solution {
         }
     }
 
-    public static void preOrderTraversal(TreeNode root) {
+    public void preOrderTraversal(TreeNode root) {
         if (root == null) {
             return;
         }
@@ -79,7 +82,7 @@ public class Solution {
         preOrderTraversal(root.right);
     }
 
-    public static void inOrderTraversal(TreeNode root) {
+    public void inOrderTraversal(TreeNode root) {
         if (root == null) {
             return;
         }
@@ -89,7 +92,7 @@ public class Solution {
         inOrderTraversal(root.right);
     }
 
-    public static void postOrderTraversal(TreeNode root) {
+    public void postOrderTraversal(TreeNode root) {
         if (root == null) {
             return;
         }

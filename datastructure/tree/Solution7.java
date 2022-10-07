@@ -1,6 +1,6 @@
-package java.datastructure.tree;
+package datastructure.tree;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class Solution7 {
 
@@ -15,7 +15,7 @@ public class Solution7 {
         root.right.right = new TreeNode(80);
 
         int count = count(root);
-        System.out.println("The total count of tree node is " + count);
+        System.out.println("The total count of datastructure.tree node is " + count);
     }
 
     int count(TreeNode root) {
@@ -25,7 +25,7 @@ public class Solution7 {
 
         int leftCount = count(root.left);
         int rightCount = count(root.right);
-        System.out.println("The tree node of " + root.val + " have the " + leftCount + " left tree nodes " + " and " + rightCount + " right tree nodes");
+        System.out.println("The datastructure.tree node of " + root.val + " have the " + leftCount + " left datastructure.tree nodes " + " and " + rightCount + " right datastructure.tree nodes");
 
         return leftCount + rightCount + 1;
     }

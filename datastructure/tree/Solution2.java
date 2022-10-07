@@ -1,6 +1,6 @@
-package java.datastructure.tree;
+package datastructure.tree;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class Solution2 {
 

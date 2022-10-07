@@ -1,4 +1,4 @@
-package java.datastructure.listnode;
+package datastructure.listnode;
 
 public class ListNode {
 
