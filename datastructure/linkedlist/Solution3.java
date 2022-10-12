@@ -1,8 +1,8 @@
-package datastructure.listnode;
+package datastructure.linkedlist;
 
 import org.junit.jupiter.api.Test;
 
-public class Solution5 {
+public class Solution3 {
 
     @Test
     void test() {
@@ -13,14 +13,12 @@ public class Solution5 {
         head.next.next.next.next = new ListNode(5);
         head.next.next.next.next.next = new ListNode(6);
 
-        reversedTraverse(head);
+        traverse(head);
     }
 
-    void reversedTraverse(ListNode head) {
-        if (head == null) {
-            return;
+    void traverse(ListNode head) {
+        for (ListNode p = head; p != null; p = p.next) {
+            System.out.print(p.val + " -> ");
         }
-        reversedTraverse(head.next);
-        System.out.print(head.val + " -> ");
     }
 }

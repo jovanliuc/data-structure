@@ -1,8 +1,10 @@
-package datastructure.listnode;
+package datastructure.linkedlist;
 
 import org.junit.jupiter.api.Test;
 
-public class Solution2 {
+public class Solution6 {
+
+    ListNode successor;
 
     @Test
     void test() {
@@ -13,17 +15,19 @@ public class Solution2 {
         head.next.next.next.next = new ListNode(5);
         head.next.next.next.next.next = new ListNode(6);
 
-        reverse(head);
+        ListNode reversedListNode = reverseN(head, 3);
+        System.out.println(reversedListNode.val);
     }
 
-    public ListNode reverse(ListNode head) {
-        if (head == null || head.next == null) {
+    ListNode reverseN(ListNode head, int n) {
+        if (n == 1) {
+            successor = head.next;
             return head;
         }
 
-        ListNode last = reverse(head.next);
+        ListNode last = reverseN(head.next, n - 1);
         head.next.next = head;
-        head.next = null;
+        head.next = successor;
 
         return last;
     }
