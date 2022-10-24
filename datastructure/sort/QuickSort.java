@@ -11,15 +11,15 @@ public class QuickSort {
     void test() {
         int[] nums = {5 ,3, 2, 4, 1, 6};
         quickSort(nums);
+        System.out.println(nums.length);
     }
 
     private void quickSort(int[] nums) {
         if (nums == null || nums.length <=1) {
             return;
         }
-        // shuffle(nums);
+        shuffle(nums);
         quickSort(nums, 0, nums.length - 1);
-        System.out.println(nums.length);
     }
 
     private void quickSort(int[] nums, int low, int high) {
@@ -34,16 +34,17 @@ public class QuickSort {
 
     private int partition(int[] nums, int low, int high) {
         int pivotVal = nums[low];
+        while (low < high) {
+            while (low < high && nums[high] >= pivotVal) {
+                high--;
+            }
+            nums[low] = nums[high];
 
-        while (low < high && nums[high] >= pivotVal) {
-            high--;
+            while (low < high && nums[low] <= pivotVal) {
+                low++;
+            }
+            nums[high] = nums[low];
         }
-        nums[low] = nums[high];
-
-        while (low < high && nums[low] <= pivotVal) {
-            low++;
-        }
-        nums[high] = nums[low];
 
         nums[low] = pivotVal;
         return low;
